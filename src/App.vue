@@ -48,8 +48,7 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  background-color: #141625;
+  font-family: "Poppins", sans-serif;
 }
 
 .app {
