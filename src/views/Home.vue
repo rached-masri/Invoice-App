@@ -29,22 +29,26 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
-  name: "Home",
+  name: 'Home',
   data() {
     return {
       filterMenu: null,
       filteredInvoice: null,
-    };
+    }
   },
   components: {},
-  methods : {
-    newInvoice() {},
-    toggleFilterMenu() {
-      this.filterMenu = !this.filterMenu;
+  methods: {
+    ...mapMutations(['TOGGLE_INVOICE']),
+    newInvoice() {
+      this.TOGGLE_INVOICE()
     },
-  }
-};
+    toggleFilterMenu() {
+      this.filterMenu = !this.filterMenu
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -81,7 +85,8 @@ export default {
           top: 25px;
           list-style: none;
           background-color: #1e2139;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -1px rgba(0, 0, 0, 0.06);
           li {
             cursor: pointer;
             font-size: 12px;
